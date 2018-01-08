@@ -7,10 +7,10 @@
     {% if article.article_image %}
         <img src="{{ MEDIA_URL }} {{ article.article_image.url }}">
     {% endif %}
-<p>{{ article.article_text }}</p>
-
-
     </div>
+
+<p>{% autoescape off%}{{ article.article_text }}{% endautoescape %}</p>
+
 <hr>
     <div class="large-offset-1 large-8 columns">
 <p>Комментарии</p>

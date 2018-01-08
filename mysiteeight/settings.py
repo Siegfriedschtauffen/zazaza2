@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'article',
     'loginsys',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -129,4 +130,13 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_CONFIGS = {
+'default': {
+'toolbar': 'Advanced',
+},
+}
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+CKEDITOR_IMAGE_BACKEND =  'pillow'
 
+#TEMPLATE_CONTEXT_PROCESSORS = ("django.core.context_processors.request",)

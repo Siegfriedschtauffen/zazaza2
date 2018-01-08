@@ -3,13 +3,14 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.safestring import mark_safe
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 class Article(models.Model):
     class Meta():
         db_table = "article"
     article_title = models.CharField(max_length = 200)
-    article_text = models.TextField()
+    article_text = RichTextField()
     article_date = models.DateTimeField()
     article_likes = models.IntegerField(default=0)
     article_image = models.ImageField(null=True, blank=True, upload_to="images/", verbose_name= 'Изображение')
